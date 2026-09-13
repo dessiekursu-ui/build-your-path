@@ -1183,6 +1183,7 @@ function Index() {
             </CardContent>
           </Card>
 
+          <div className="flex flex-1 flex-col">
           {sekme === "aidat" ? (
             aidatListeAcik ? (
               <>
@@ -1191,7 +1192,7 @@ function Index() {
                     Talebe Listesi
                   </h2>
                 </div>
-                <Card className="overflow-hidden">
+                <Card className="flex flex-1 flex-col overflow-hidden">
                   <div className="overflow-x-auto">
                     <Table className="table-fixed min-w-[540px]">
                       <colgroup>
@@ -1303,6 +1304,7 @@ function Index() {
                 </Card>
               </>
             ) : (
+              <div className="flex flex-1 flex-col">
               <Suspense
                 fallback={<div className="p-6 text-sm text-muted-foreground">Yükleniyor…</div>}
               >
@@ -1317,6 +1319,7 @@ function Index() {
                   grupFiltre={grupFiltre}
                 />
               </Suspense>
+              </div>
             )
           ) : (
             <>
@@ -1374,7 +1377,7 @@ function Index() {
                 </div>
               </div>
 
-              <Card className="overflow-hidden">
+              <Card className="flex flex-1 flex-col overflow-hidden">
                 <Table className="table-fixed">
                   <colgroup>
                     <col className="w-[6%]" />
@@ -1527,6 +1530,7 @@ function Index() {
               </Card>
             </>
           )}
+          </div>
         </div>
 
         <VermediDiyalog

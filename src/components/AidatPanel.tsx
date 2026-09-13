@@ -127,7 +127,7 @@ export default function AidatPanel({
   const grupAdi = aktifGrup?.ad ?? "Tüm gruplar";
 
   return (
-    <div>
+    <div className="flex flex-1 flex-col">
       {/* Aidat tutarı */}
       <Card className="mb-3 border-accent/40 bg-secondary/40">
         <CardContent className="flex flex-wrap items-center justify-between gap-3 py-4">
@@ -262,7 +262,7 @@ export default function AidatPanel({
         />
       </div>
 
-      <Card className="overflow-hidden">
+      <Card className="flex flex-1 flex-col overflow-hidden">
           <Table className="table-fixed">
           <colgroup>
             <col className="w-[6%]" />
