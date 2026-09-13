@@ -417,6 +417,7 @@ function Index() {
   const [seciliGun, setSeciliGun] = useState<number>(() => bugununGunu());
   const seciliDers: Ders = "kuran";
 
+  const [menuAcik, setMenuAcik] = useState(false);
   const [ayarlarAcik, setAyarlarAcik] = useState(false);
   const [mailAcik, setMailAcik] = useState(false);
   const [aidatIndirAy, setAidatIndirAy] = useState<string>("buAy");
