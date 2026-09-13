@@ -1964,9 +1964,7 @@ function Index() {
                         value={t.grup ?? ""}
                         onChange={(e) => {
                           const yeni = e.target.value as Grup | "";
-                          void talebeGuncelle(t.id, {
-                            grup: yeni === "" ? undefined : yeni,
-                          });
+                          void talebeGuncelle(t.id, { grup: yeni });
                         }}
                         className="h-9 shrink-0 rounded-md border border-border bg-background px-2 text-xs text-foreground outline-none focus:border-primary"
                       >
@@ -2699,6 +2697,7 @@ function DuzenleDiyalog({
       }, 180);
       return () => window.clearTimeout(id);
     }
+    return undefined;
   }, [talebe, sayfaOdakli]);
 
   const sayfaDogrula = (deger: string): number | null => {
