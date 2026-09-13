@@ -998,7 +998,7 @@ function Index() {
   return (
     <DilContext.Provider value={dil}>
       <div className="min-h-screen bg-background">
-        <div className="mx-auto max-w-6xl px-2 py-4 sm:px-6 sm:py-12">
+        <div className="mx-auto flex min-h-screen w-full max-w-none flex-col px-2 py-4 sm:px-6 sm:py-8">
           <header className="relative mb-6 flex flex-col items-center gap-3 text-center sm:mb-12 sm:gap-5">
             <div className="absolute left-0 top-0 flex items-center gap-2">
               <DropdownMenu>
@@ -1183,6 +1183,7 @@ function Index() {
             </CardContent>
           </Card>
 
+          <div className="flex flex-1 flex-col">
           {sekme === "aidat" ? (
             aidatListeAcik ? (
               <>
@@ -1191,7 +1192,7 @@ function Index() {
                     Talebe Listesi
                   </h2>
                 </div>
-                <Card className="overflow-hidden">
+                <Card className="flex flex-1 flex-col overflow-hidden">
                   <div className="overflow-x-auto">
                     <Table className="table-fixed min-w-[540px]">
                       <colgroup>
@@ -1303,6 +1304,7 @@ function Index() {
                 </Card>
               </>
             ) : (
+              <div className="flex flex-1 flex-col">
               <Suspense
                 fallback={<div className="p-6 text-sm text-muted-foreground">Yükleniyor…</div>}
               >
@@ -1317,6 +1319,7 @@ function Index() {
                   grupFiltre={grupFiltre}
                 />
               </Suspense>
+              </div>
             )
           ) : (
             <>
@@ -1374,7 +1377,7 @@ function Index() {
                 </div>
               </div>
 
-              <Card className="overflow-hidden">
+              <Card className="flex flex-1 flex-col overflow-hidden">
                 <Table className="table-fixed">
                   <colgroup>
                     <col className="w-[6%]" />
@@ -1527,6 +1530,7 @@ function Index() {
               </Card>
             </>
           )}
+          </div>
         </div>
 
         <VermediDiyalog
@@ -1872,7 +1876,7 @@ function Index() {
             setGrupTaslak(acik ? gruplar.map((g) => ({ ...g })) : null);
           }}
         >
-          <DialogContent className="max-h-[80vh] overflow-y-auto sm:max-w-lg">
+          <DialogContent className="flex h-dvh max-h-none w-full max-w-full flex-col gap-3 overflow-y-auto rounded-none border-0 p-4 sm:p-6">
             <DialogHeader>
               <DialogTitle>Gruplar</DialogTitle>
               <DialogDescription>
@@ -2009,7 +2013,7 @@ function Index() {
             if (!o) setYeniTalebeAcik(null);
           }}
         >
-          <DialogContent className="sm:max-w-md">
+          <DialogContent className="flex h-dvh max-h-none w-full max-w-full flex-col gap-3 overflow-y-auto rounded-none border-0 p-4 sm:p-6">
             <DialogHeader>
               <DialogTitle>
                 {yeniTalebeAcik === "aidat" ? "Yeni Talebe Ekle" : tr("talebeEkle")}
@@ -2251,7 +2255,7 @@ function ProfilDiyalog({
   return (
     <>
       <Dialog open={!!talebe} onOpenChange={(o) => !o && onClose()}>
-        <DialogContent className="fixed flex max-h-[94dvh] w-[95vw] max-w-[95vw] flex-col overflow-hidden p-0 sm:max-w-md">
+        <DialogContent className="fixed flex h-dvh max-h-none w-full max-w-full flex-col overflow-hidden rounded-none border-0 p-0">
           {hocaModu && (
             <Button
               size="icon"
@@ -2737,7 +2741,7 @@ function DuzenleDiyalog({
   return (
     <Dialog open={!!talebe} onOpenChange={(o) => !o && onClose()}>
       <DialogContent
-        className="sm:max-w-md"
+        className="flex h-dvh max-h-none w-full max-w-full flex-col gap-3 overflow-y-auto rounded-none border-0 p-4 sm:p-6"
         onOpenAutoFocus={(e) => {
           if (sayfaOdakli) {
             e.preventDefault();
